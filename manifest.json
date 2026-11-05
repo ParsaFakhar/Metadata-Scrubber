@@ -1,13 +1,13 @@
 {
   "manifest_version": 3,
   "name": "Metadata Scrubber",
-  "version": "2.8.1",
-  "description": "Strips EXIF, GPS, XMP and other identifying metadata from files before a site can receive them. 100% on-device. One click to pause it when you need to.",
+  "version": "2.8.2",
+  "description": "Strips EXIF, GPS, XMP and other identifying metadata from files before a site can receive them, with optional size optimization and WebP conversion. 100% on-device.",
   "icons": { "48": "icons/icon-48.png", "96": "icons/icon-96.png", "128": "icons/icon-128.png" },
   "browser_specific_settings": {
     "gecko": {
       "id": "metadata-scrubber-standalone@cleanroom.privacy",
-      "strict_min_version": "161.0a1",
+      "strict_min_version": "160.0a1",
       "data_collection_permissions": { "required": ["none"] }
     }
   },

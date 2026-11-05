@@ -27,10 +27,32 @@
   <section id="convertRow" class="card row" hidden>
     <div>
       <b>Convert WebP</b>
-      <small>to JPG/PNG when that is smaller, on this site</small>
+      <small>Always convert WebP uploads to JPG/PNG on this site</small>
     </div>
     <label class="switch">
       <input type="checkbox" id="convert" aria-label="Convert WebP on this site">
+      <span></span>
+    </label>
+  </section>
+
+  <section id="optimizeRow" class="card row" hidden>
+    <div>
+      <b>Size Optimization</b>
+      <small>Auto-compress large images (&gt;2 MB) on this site</small>
+    </div>
+    <label class="switch">
+      <input type="checkbox" id="optimize" aria-label="Optimize large images on this site">
+      <span></span>
+    </label>
+  </section>
+
+  <section id="debugRow" class="card row">
+    <div>
+      <b>Debug Console Logs</b>
+      <small>Output scrubber diagnostics to Web Console</small>
+    </div>
+    <label class="switch">
+      <input type="checkbox" id="debug" aria-label="Enable console debug logs">
       <span></span>
     </label>
   </section>
