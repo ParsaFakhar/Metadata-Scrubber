@@ -1,0 +1,44 @@
+{
+  "manifest_version": 3,
+  "name": "Metadata Scrubber",
+  "version": "2.8.1",
+  "description": "Strips EXIF, GPS, XMP and other identifying metadata from files before a site can receive them. 100% on-device. One click to pause it when you need to.",
+  "icons": { "48": "icons/icon-48.png", "96": "icons/icon-96.png", "128": "icons/icon-128.png" },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "metadata-scrubber-standalone@cleanroom.privacy",
+      "strict_min_version": "161.0a1",
+      "data_collection_permissions": { "required": ["none"] }
+    }
+  },
+  "permissions": ["storage"],
+  "background": { "scripts": ["common.js", "background.js"] },
+  "action": {
+    "default_title": "Metadata Scrubber — cleaning uploads",
+    "default_icon": { "16": "icons/action-on-16.png", "32": "icons/action-on-32.png", "48": "icons/action-on-48.png" },
+    "default_popup": "popup.html"
+  },
+  "commands": {
+    "toggle-site": {
+      "suggested_key": { "mac": "MacCtrl+Shift+U" },
+      "description": "Pause or resume scrubbing on the current site"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "js": ["common.js", "bridge.js"],
+      "run_at": "document_start",
+      "all_frames": true,
+      "match_about_blank": true
+    },
+    {
+      "matches": ["*://*/*"],
+      "js": ["pdf-lib.min.js", "main.js"],
+      "run_at": "document_start",
+      "all_frames": true,
+      "match_about_blank": true,
+      "world": "MAIN"
+    }
+  ]
+}

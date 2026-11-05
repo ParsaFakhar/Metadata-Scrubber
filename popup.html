@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Metadata Scrubber</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <img src="icons/icon-96.png" width="40" height="40" alt="">
+    <div class="titles">
+      <h1>Metadata Scrubber</h1>
+      <p id="status">&nbsp;</p>
+    </div>
+    <label class="switch" title="Turn scrubbing on or off everywhere">
+      <input type="checkbox" id="global" aria-label="Scrubbing enabled">
+      <span></span>
+    </label>
+  </header>
+
+  <section id="site" class="card">
+    <div class="site-head"><span class="dot" id="dot"></span><span id="host"></span></div>
+    <p id="note"></p>
+    <div id="actions"></div>
+  </section>
+
+  <section id="convertRow" class="card row" hidden>
+    <div>
+      <b>Convert WebP</b>
+      <small>to JPG/PNG when that is smaller, on this site</small>
+    </div>
+    <label class="switch">
+      <input type="checkbox" id="convert" aria-label="Convert WebP on this site">
+      <span></span>
+    </label>
+  </section>
+
+  <footer>
+    <span><kbd>⌃</kbd><kbd>⇧</kbd><kbd>U</kbd> pause / resume this site</span>
+  </footer>
+  <script src="common.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
